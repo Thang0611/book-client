@@ -71,13 +71,13 @@ function DetailBook() {
     let formData = new FormData();
     // formData.append('image', picture, picture.name)
     formData.append('image', picture)
-    formData.append("title", input.title||null);
-    formData.append("author", input.author||null);
-    formData.append('category', input.category||null);
-    formData.append('date', input.date||null);
-    formData.append('numOfPage', input.numOfPage||null);
-    formData.append('decription', input.decription||null);
-    formData.append('amount', input.amount||null);
+    formData.append('title', input?.title);
+    formData.append('author', input?.author);
+    formData.append('category', input?.category);
+    formData.append('date', input?.date);
+    formData.append('numOfPage', input?.numOfPage);
+    formData.append('decription', input?.decription);
+    formData.append('amount', input?.amount);
     console.log(input)
     axios.post(`${URLBase}`,formData,setHeader())
     .then(res=>{
